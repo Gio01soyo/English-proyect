@@ -15,7 +15,9 @@ body {
   font-family: var(--font);
   background: var(--bg);
   color: var(--fg);
-  overflow: hidden;
+  /* Quitamos overflow hidden para permitir visibilidad total */
+  /* overflow: hidden; */
+  overflow: auto;
 }
 
 /* Navbar */
