@@ -18,8 +18,8 @@ body {
   font-family: var(--fuente);
   background: var(--fondo-dark);
   color: var(--texto-dark);
-  height: 100vh;
-  overflow: hidden;
+  /* removido overflow:hidden para permitir que imágenes se expandan */
+  min-height: 100vh;
   transition: background 0.3s, color 0.3s;
 }
 body.light-theme {
