@@ -1,20 +1,19 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Final English IV Project</title>
-  <!-- Enlace a Google Fonts -->
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <!-- Estilos principales -->
+  <!-- Styles -->
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
   <!-- Toggle Dark/Light Theme -->
   <div class="theme-toggle">
-    <input type="checkbox" id="toggle-checkbox" />
+    <input type="checkbox" id="toggle-checkbox">
     <label for="toggle-checkbox" class="toggle-label">
       <span class="sun">☀️</span>
       <span class="moon">🌙</span>
@@ -36,15 +35,14 @@
     </ul>
   </nav>
 
-  <!-- Secciones full-screen con scroll-snap y clipping -->
   <main>
-
-    <section id="intro" class="snap-section clip-diagonal">
+    <!-- Aquí usamos <header> en vez de <section> -->
+    <header id="intro" class="snap-section clip-diagonal">
       <h1 class="gradient-text">Final Project – English IV</h1>
       <p>By: [Your Name or Team Name]</p>
       <a href="#hobbies" class="boton">Explore Project ↓</a>
       <p class="subtext">Introduction to My Hero Academia and English structures.</p>
-    </section>
+    </header>
 
     <section id="hobbies" class="snap-section clip-wave">
       <h2 class="gradient-text">My Hobbies and Free Time</h2>
@@ -85,10 +83,10 @@
     <section id="passive" class="snap-section clip-wave">
       <h2 class="gradient-text">Passive Voice Example</h2>
       <p>My Hero Academia is produced by Studio Bones.<br>
-      The series is watched by millions worldwide.<br>
-      New episodes are released every Saturday.</p>
+         The series is watched by millions worldwide.<br>
+         New episodes are released every Saturday.
+      </p>
     </section>
-
   </main>
 
   <!-- Script for theme toggle -->
@@ -98,6 +96,5 @@
       document.body.classList.toggle('light-theme', toggle.checked);
     });
   </script>
-
 </body>
 </html>
