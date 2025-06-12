@@ -3,8 +3,11 @@
   --bg: #1a1a1a;
   --fg: #f4f4f4;
   --accent: #00ffe1;
+  --accent-light: rgba(0, 255, 225, 0.5);
   --font: 'Poppins', sans-serif;
   --overlay: rgba(0,0,0,0.5);
+  --neon-color: #00ffe1;
+  --neon-glow: rgba(0, 255, 225, 0.7);
 }
 
 /* Reset */
@@ -17,8 +20,7 @@ body {
   color: var(--fg);
 }
 .navbar {
-  position: fixed;
-  top: 0; left: 0; right: 0;
+  position: fixed; top: 0; left: 0; right: 0;
   background: rgba(0,0,0,0.8);
   padding: 1rem;
   text-align: center;
@@ -63,21 +65,48 @@ main {
   z-index: 1;
 }
 
-/* Contenido centrado y legible */
-.content {
+/* Caja Neón */
+.neon-box {
   position: relative;
-  z-index: 2;
-  max-width: 800px;
-  text-align: center;
   padding: 2rem;
-  background: var(--overlay);
-  border-radius: 8px;
+  border: 2px solid var(--neon-color);
+  border-radius: 10px;
+  box-shadow:
+    0 0 10px var(--neon-color),
+    0 0 20px var(--neon-glow),
+    0 0 30px var(--neon-glow);
+  background: rgba(0, 0, 0, 0.3);
+  max-width: 90%;
+  width: auto;
+  z-index: 2;
+  animation: neon-flicker 1.5s infinite alternate;
 }
-.content h1,
-.content h2 {
-  margin-bottom: 1rem;
+
+/* Contenido centrado */
+.content {
+  color: var(--fg);
+}
+.content h1, .content h2 {
+  margin-bottom: 0.75rem;
 }
 .content p {
-  font-size: 1.1rem;
+  font-size: 1rem;
   line-height: 1.5;
+}
+
+/* Neón Flicker Animation */
+@keyframes neon-flicker {
+  0%, 100% {
+    box-shadow:
+      0 0 5px var(--neon-color),
+      0 0 10px var(--neon-color),
+      0 0 20px var(--neon-glow),
+      0 0 30px var(--neon-glow);
+  }
+  50% {
+    box-shadow:
+      0 0 2px var(--neon-color),
+      0 0 5px var(--neon-glow),
+      0 0 10px var(--neon-glow);
+  }
 }
