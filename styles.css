@@ -287,3 +287,87 @@ input:checked + .toggle-label .ball {
   font-size: 0.75rem;
   pointer-events: none;
 }
+:root {
+  --bg: #1a1a1a;
+  --fg: #f4f4f4;
+  --accent: #00ffe1;
+  --font: 'Poppins', sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--fg);
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Navbar fija con backdrop-filter */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 1rem 2rem;
+  backdrop-filter: blur(10px);
+  background: rgba(26, 26, 26, 0.6);
+  z-index: 100;
+}
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+.navbar a {
+  color: var(--fg);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+.navbar a:hover {
+  color: var(--accent);
+}
+
+/* Scroll snap y secciones full-screen */
+main {
+  height: 100%;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+}
+.snap-section {
+  scroll-snap-align: start;
+  height: 100vh;
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background: var(--bg);
+  transition: background 0.3s;
+}
+.snap-section:nth-child(even) {
+  background: #262626;
+}
+.snap-section h2 {
+  margin-bottom: 1rem;
+  font-size: 2.5rem;
+  color: var(--accent);
+}
+.snap-section p {
+  max-width: 600px;
+  text-align: center;
+  line-height: 1.5;
+}
+
+/* Clipping shapes con clip-path */
+.clip-diagonal {
+  clip-path: polygon(0 5%, 100% 0, 100% 95%, 0% 100%);
+}
+.clip-diagonal-rev {
+  clip-path: polygon(0 0, 100% 5%, 100% 100%, 0 95%);
+}
+.clip-wave {
+  clip-path: path('M0,100 C150,200 350,0 500,100 L500,00 L0,0 Z');
+}
