@@ -18,33 +18,6 @@ body {
   overflow: auto;
 }
 
-/* Header */
-.header {
-  text-align: center;
-  padding: 2rem;
-  background: rgba(0,0,0,0.5);
-}
-.neon-title {
-  font-size: 3rem;
-  text-shadow: 0 0 5px var(--neon), 0 0 10px var(--neon-glow);
-}
-.subtitle {
-  margin: 0.5rem 0;
-}
-.boton {
-  display: inline-block;
-  margin-top: 1rem;
-  text-decoration: none;
-  padding: 0.5rem 1rem;
-  border: 2px solid var(--neon);
-  border-radius: 8px;
-  transition: background 0.3s;
-}
-.boton:hover {
-  background: var(--neon);
-  color: #111;
-}
-
 /* Navbar */
 .navbar {
   position: fixed; top: 0; left: 0; right: 0;
@@ -52,7 +25,7 @@ body {
   padding: 1rem 2rem;
   z-index: 20;
 }
-.navbar ul { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+.navbar ul { display: flex; justify-content: center; gap: 2rem; }
 .navbar a {
   color: var(--fg);
   text-decoration: none;
@@ -71,17 +44,21 @@ body {
 }
 .navbar a:hover::after { transform: scaleX(1); }
 
+
+.navbar a.active {
+  color: var(--neon);
+}
 /* Scroll Indicator */
 .scroll-indicator { position: fixed; bottom: 1rem; left: 50%; transform: translateX(-50%); width: 24px; height: 40px; border: 2px solid var(--neon); border-radius: 12px; z-index:15; }
 .scroll-indicator span { display: block; width: 4px; height: 8px; background: var(--neon); margin: 4px auto; border-radius: 4px; animation: scrollDot 1.5s infinite; }
 @keyframes scrollDot { 0%,100%{transform:translateY(0);}50%{transform:translateY(10px);} }
 
 /* Main Scroll Snap */
-main { position: absolute; top: 140px; bottom: 60px; left: 0; right: 0; overflow-y: scroll; scroll-snap-type: y mandatory; }
+main { position: absolute; top: 60px; bottom: 0; left: 0; right: 0; overflow-y: scroll; scroll-snap-type: y mandatory; }
 .snap-section {
   scroll-snap-align: start;
   position: relative;
-  height: calc(100vh - 140px);
+  height: calc(100vh - 60px);
   display: flex; justify-content: center; align-items: center;
   overflow: visible;
   animation: fadeInSection 1s ease;
@@ -96,10 +73,133 @@ main { position: absolute; top: 140px; bottom: 60px; left: 0; right: 0; overflow
   position: relative;
 }
 
-/* Footer */
-.footer {
-  text-align: center;
-  padding: 1rem;
-  background: rgba(0,0,0,0.8);
+/* Background Overlay */
+.image-bg::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: var(--overlay);
+  z-index:1;
+}
+
+/* Neon Box with decorative border animation */
+.neon-box {
   position: relative;
+  padding: 2rem;
+  border: 2px solid var(--neon);
+  border-radius: 12px;
+  backdrop-filter: blur(4px);
+  background: rgba(0,0,0,0.3);
+  box-shadow: 0 0 10px var(--neon), 0 0 20px var(--neon-glow), 0 0 40px var(--neon-glow);
+  max-width: 80%; width: auto;
+  z-index:2;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+}
+.neon-box::after {
+  content: '';
+  position: absolute;
+  top: -2px; left: -2px;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  border-radius: 14px;
+  background: linear-gradient(45deg, var(--neon), transparent, var(--neon));
+  background-size: 200% 200%;
+  animation: borderRotate 3s linear infinite;
+  z-index:1;
+}
+@keyframes borderRotate {
+  0%    { background-position: 0% 50%; }
+  50%   { background-position: 100% 50%; }
+  100%  { background-position: 0% 50%; }
+}
+.neon-box:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px var(--neon), 0 0 30px var(--neon-glow), 0 0 60px var(--neon-glow);
+}
+
+/* Content */
+.content { position: relative; z-index:2; text-align: center; }
+.content h1, .content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 5px var(--neon), 0 0 10px var(--neon-glow);
+}
+.content p {
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+/* Chrome, Edge y Safari */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #222;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--neon);
+  border-radius: 4px;
+  border: 2px solid #222; /* Opcional: crea un pequeño padding entre thumb y track */
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--neon) #222;
+}
+/* Efecto flicker para títulos neon */
+@keyframes flicker {
+  0%, 100% {
+    text-shadow:
+      0 0 5px var(--neon),
+      0 0 10px var(--neon-glow);
+  }
+  40% {
+    text-shadow:
+      0 0 2px var(--neon),
+      0 0 4px var(--neon-glow);
+  }
+  43% {
+    text-shadow: none;
+  }
+  47% {
+    text-shadow:
+      0 0 3px var(--neon),
+      0 0 7px var(--neon-glow);
+  }
+  70% {
+    text-shadow:
+      0 0 1px var(--neon),
+      0 0 2px var(--neon-glow);
+  }
+}
+
+/* Aplica el flicker solo a los <h2> dentro de .content */
+.content h2 {
+  animation: flicker 3s infinite alternate;
+}
+/* 3. Efecto hover sobre fondo */
+.snap-section:hover {
+  background-size: 110%;
+  transition: background-size 0.6s ease;
+}
+
+/* Overlay degradado sobre cada sección parallax */
+.parallax::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.3) 0%,
+    rgba(0, 0, 0, 0.6) 75%
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Asegúrate de que el contenido y la caja neon queden por encima */
+.snap-section,
+.snap-section .neon-box {
+  position: relative;
+  z-index: 2;
 }
