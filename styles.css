@@ -196,3 +196,94 @@ footer {
     opacity: 1;
   }
 }
+/* — Tema Claro/Dark Toggle — */
+:root {
+  --bg: #1a1a1a;
+  --fg: #f4f4f4;
+  --primary: #9b5de5;
+  --secondary: #00ffe1;
+  --accent: #ffee00;
+}
+
+body.light-theme {
+  --bg: #fafafa;
+  --fg: #222222;
+  --primary: #6b21a8;
+  --secondary: #059669;
+  --accent: #fbbf24;
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  transition: background 0.3s, color 0.3s;
+}
+
+/* — Gradient Text + Glow Animation — */
+.gradient-text {
+  background: linear-gradient(45deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: glow 3s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    text-shadow:
+      0 0 5px var(--primary),
+      0 0 10px var(--secondary);
+  }
+  to {
+    text-shadow:
+      0 0 20px var(--accent),
+      0 0 30px var(--primary),
+      0 0 40px var(--secondary);
+  }
+}
+
+/* — Toggle Switch Styles — */
+.theme-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 100;
+}
+
+.theme-toggle input {
+  display: none;
+}
+
+.toggle-label {
+  cursor: pointer;
+  width: 50px;
+  height: 25px;
+  background: var(--secondary);
+  border-radius: 50px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5px;
+  box-sizing: border-box;
+}
+
+.toggle-label .ball {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 19px;
+  height: 19px;
+  background: var(--accent);
+  border-radius: 50%;
+  transition: transform 0.3s;
+}
+
+input:checked + .toggle-label .ball {
+  transform: translateX(24px);
+}
+
+.toggle-label .sun,
+.toggle-label .moon {
+  font-size: 0.75rem;
+  pointer-events: none;
+}
