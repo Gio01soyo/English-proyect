@@ -6,6 +6,8 @@
   <title>Final English IV Project</title>
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Font Awesome para íconos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <!-- Styles -->
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -36,60 +38,85 @@
   </nav>
 
   <main>
-    <!-- Aquí usamos <header> en vez de <section> -->
+    <!-- Sección de portada con parallax y clip -->
     <header id="intro" class="snap-section clip-diagonal">
       <h1 class="gradient-text">Final Project – English IV</h1>
       <p>By: [Your Name or Team Name]</p>
       <a href="#hobbies" class="boton">Explore Project ↓</a>
       <p class="subtext">Introduction to My Hero Academia and English structures.</p>
+      <!-- Imagen local -->
+      <div class="img-box">
+        <img src="images/1.jpeg" alt="Portada">
+      </div>
     </header>
 
-    <section id="hobbies" class="snap-section clip-wave">
-      <h2 class="gradient-text">My Hobbies and Free Time</h2>
+    <section id="hobbies" class="snap-section clip-wave" tabindex="0">
+      <h2 class="gradient-text"><i class="fa-solid fa-gamepad"></i> My Hobbies and Free Time</h2>
       <p>We love watching <em>My Hero Academia</em>...</p>
       <div class="img-box">
-        <img src="https://via.placeholder.com/600x300?text=My+Hobbies" alt="Hobbies image">
+        <img src="images/2.jpeg" alt="Hobbies image">
       </div>
     </section>
 
-    <section id="experience" class="snap-section clip-diagonal-rev">
-      <h2 class="gradient-text">Past Experiences</h2>
+    <section id="experience" class="snap-section clip-diagonal-rev" tabindex="0">
+      <h2 class="gradient-text"><i class="fa-solid fa-clock-rotate-left"></i> Past Experiences</h2>
       <p>Last year, we discovered <em>My Hero Academia</em>...</p>
+      <div class="img-box">
+        <img src="images/3.jpeg" alt="Experiences image">
+      </div>
     </section>
 
-    <section id="routine" class="snap-section clip-diagonal">
-      <h2 class="gradient-text">My Daily Routine</h2>
+    <section id="routine" class="snap-section clip-diagonal" tabindex="0">
+      <h2 class="gradient-text"><i class="fa-solid fa-clock"></i> My Daily Routine</h2>
       <p>On weekdays, we wake up early and check new episodes...</p>
+      <div class="img-box">
+        <img src="images/4.jpeg" alt="Routine image">
+      </div>
     </section>
 
-    <section id="goals" class="snap-section clip-wave">
-      <h2 class="gradient-text">Future Goals</h2>
+    <section id="goals" class="snap-section clip-wave" tabindex="0">
+      <h2 class="gradient-text"><i class="fa-solid fa-bullseye"></i> Future Goals</h2>
       <p>We plan to use English IV grammar to...</p>
+      <div class="img-box">
+        <img src="images/5.jpeg" alt="Goals image">
+      </div>
     </section>
 
-    <section id="presentation" class="snap-section clip-diagonal-rev">
-      <h2 class="gradient-text">Speaking Presentation</h2>
+    <section id="presentation" class="snap-section clip-diagonal-rev" tabindex="0">
+      <h2 class="gradient-text"><i class="fa-solid fa-microphone"></i> Speaking Presentation</h2>
       <video controls>
         <source src="your-video.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
+      <div class="img-box">
+        <img src="images/6.jpeg" alt="Presentation thumbnail">
+      </div>
     </section>
 
-    <section id="writing" class="snap-section clip-diagonal">
-      <h2 class="gradient-text">Writing</h2>
+    <section id="writing" class="snap-section clip-diagonal" tabindex="0">
+      <h2 class="gradient-text"><i class="fa-solid fa-pen-nib"></i> Writing</h2>
       <p>This text uses passive voice, past simple, used to, and future structures.</p>
+      <div class="img-box">
+        <img src="images/7.jpeg" alt="Writing image">
+      </div>
     </section>
 
-    <section id="passive" class="snap-section clip-wave">
-      <h2 class="gradient-text">Passive Voice Example</h2>
+    <section id="passive" class="snap-section clip-wave" tabindex="0">
+      <h2 class="gradient-text"><i class="fa-solid fa-exchange-alt"></i> Passive Voice Example</h2>
       <p>My Hero Academia is produced by Studio Bones.<br>
          The series is watched by millions worldwide.<br>
          New episodes are released every Saturday.
       </p>
+      <div class="img-box">
+        <img src="images/8.jpeg" alt="Passive Voice image">
+      </div>
     </section>
   </main>
 
-  <!-- Script for theme toggle -->
+  <!-- Scroll Indicator -->
+  <div class="scroll-indicator"><span></span></div>
+
+  <!-- Script para toggle de tema -->
   <script>
     const toggle = document.getElementById('toggle-checkbox');
     toggle.addEventListener('change', () => {
