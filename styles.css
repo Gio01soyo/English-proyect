@@ -4,6 +4,7 @@
   --fg: #f4f4f4;
   --accent: #00ffe1;
   --font: 'Poppins', sans-serif;
+  --overlay: rgba(0,0,0,0.5);
 }
 
 /* Reset */
@@ -21,6 +22,7 @@ body {
   background: rgba(0,0,0,0.8);
   padding: 1rem;
   text-align: center;
+  z-index: 10;
 }
 .navbar ul { list-style: none; display: inline-flex; gap: 2rem; }
 .navbar a {
@@ -42,17 +44,40 @@ main {
   height: 100vh;
   scroll-snap-align: start;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
-  padding: 2rem;
+  position: relative;
+  background: var(--bg);
 }
 
-/* Imágenes */
-.snap-section img {
-  max-width: 80%;
-  height: auto;
-  border: 4px solid var(--accent);
+/* Imagen de fondo */
+.image-bg {
+  background-size: cover;
+  background-position: center;
+}
+.image-bg::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: var(--overlay);
+  z-index: 1;
+}
+
+/* Contenido centrado y legible */
+.content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  text-align: center;
+  padding: 2rem;
+  background: var(--overlay);
   border-radius: 8px;
+}
+.content h1,
+.content h2 {
+  margin-bottom: 1rem;
+}
+.content p {
+  font-size: 1.1rem;
+  line-height: 1.5;
 }
