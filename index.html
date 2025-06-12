@@ -1,127 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Final English IV Project</title>
-  <!-- Google Fonts -->
+  <title>Proyecto Final English IV</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <!-- Font Awesome para íconos -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <!-- Styles -->
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <!-- Toggle Dark/Light Theme -->
-  <div class="theme-toggle">
-    <input type="checkbox" id="toggle-checkbox">
-    <label for="toggle-checkbox" class="toggle-label">
-      <span class="sun">☀️</span>
-      <span class="moon">🌙</span>
-      <div class="ball"></div>
-    </label>
-  </div>
-
-  <!-- Navbar fija con blur -->
   <nav class="navbar">
     <ul>
-      <li><a href="#intro">Introduction</a></li>
-      <li><a href="#hobbies">Hobbies</a></li>
-      <li><a href="#experience">Past Experiences</a></li>
-      <li><a href="#routine">Daily Routine</a></li>
-      <li><a href="#goals">Future Goals</a></li>
-      <li><a href="#presentation">Presentation</a></li>
-      <li><a href="#writing">Writing</a></li>
-      <li><a href="#passive">Passive Voice</a></li>
+      <li><a href="#intro">Introducción</a></li>
+      <li><a href="#sec1">Sección 1</a></li>
+      <li><a href="#sec2">Sección 2</a></li>
+      <li><a href="#sec3">Sección 3</a></li>
     </ul>
   </nav>
 
   <main>
-    <!-- Sección de portada con parallax y clip -->
-    <header id="intro" class="snap-section clip-diagonal">
-      <h1 class="gradient-text">Final Project – English IV</h1>
-      <p>By: [Your Name or Team Name]</p>
-      <a href="#hobbies" class="boton">Explore Project ↓</a>
-      <p class="subtext">Introduction to My Hero Academia and English structures.</p>
-      <!-- Imagen local -->
-      <div class="img-box">
-        <img src="imagenes/1.jpeg" alt="Portada">
-      </div>
-    </header>
-
-    <section id="hobbies" class="snap-section clip-wave" tabindex="0">
-      <h2 class="gradient-text"><i class="fa-solid fa-gamepad"></i> My Hobbies and Free Time</h2>
-      <p>We love watching <em>My Hero Academia</em>...</p>
-      <div class="img-box">
-        <img src="imagenes/2.jpeg" alt="Hobbies image">
-      </div>
+    <section id="intro" class="snap-section">
+      <h1>Bienvenido a My Hero Academia</h1>
+      <p>Este es un texto de prueba para la sección de introducción.</p>
+      <img src="imagenes/1.jpeg" alt="Imagen 1">
     </section>
 
-    <section id="experience" class="snap-section clip-diagonal-rev" tabindex="0">
-      <h2 class="gradient-text"><i class="fa-solid fa-clock-rotate-left"></i> Past Experiences</h2>
-      <p>Last year, we discovered <em>My Hero Academia</em>...</p>
-      <div class="img-box">
-        <img src="imagenes/3.jpeg" alt="Experiences image">
-      </div>
+    <section id="sec1" class="snap-section">
+      <h2>Sección 1: Hobbies</h2>
+      <p>Texto de ejemplo sobre hobbies.</p>
+      <img src="imagenes/2.jpeg" alt="Imagen 2">
     </section>
 
-    <section id="routine" class="snap-section clip-diagonal" tabindex="0">
-      <h2 class="gradient-text"><i class="fa-solid fa-clock"></i> My Daily Routine</h2>
-      <p>On weekdays, we wake up early and check new episodes...</p>
-      <div class="img-box">
-        <img src="imagenes/4.jpeg" alt="Routine image">
-      </div>
+    <section id="sec2" class="snap-section">
+      <h2>Sección 2: Experiencias</h2>
+      <p>Texto de ejemplo sobre experiencias pasadas.</p>
+      <img src="imagenes/3.jpeg" alt="Imagen 3">
     </section>
 
-    <section id="goals" class="snap-section clip-wave" tabindex="0">
-      <h2 class="gradient-text"><i class="fa-solid fa-bullseye"></i> Future Goals</h2>
-      <p>We plan to use English IV grammar to...</p>
-      <div class="img-box">
-        <img src="imagenes/5.jpeg" alt="Goals image">
-      </div>
-    </section>
-
-    <section id="presentation" class="snap-section clip-diagonal-rev" tabindex="0">
-      <h2 class="gradient-text"><i class="fa-solid fa-microphone"></i> Speaking Presentation</h2>
-      <video controls>
-        <source src="your-video.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-      <div class="img-box">
-        <img src="imagenes/6.jpeg" alt="Presentation thumbnail">
-      </div>
-    </section>
-
-    <section id="writing" class="snap-section clip-diagonal" tabindex="0">
-      <h2 class="gradient-text"><i class="fa-solid fa-pen-nib"></i> Writing</h2>
-      <p>This text uses passive voice, past simple, used to, and future structures.</p>
-      <div class="img-box">
-        <img src="imagenes/7.jpeg" alt="Writing image">
-      </div>
-    </section>
-
-    <section id="passive" class="snap-section clip-wave" tabindex="0">
-      <h2 class="gradient-text"><i class="fa-solid fa-exchange-alt"></i> Passive Voice Example</h2>
-      <p>My Hero Academia is produced by Studio Bones.<br>
-         The series is watched by millions worldwide.<br>
-         New episodes are released every Saturday.
-      </p>
-      <div class="img-box">
-        <img src="imagenes/8.jpeg" alt="Passive Voice image">
-      </div>
+    <section id="sec3" class="snap-section">
+      <h2>Sección 3: Futuro</h2>
+      <p>Texto de ejemplo sobre metas futuras.</p>
+      <img src="imagenes/4.jpeg" alt="Imagen 4">
     </section>
   </main>
 
-  <!-- Scroll Indicator -->
-  <div class="scroll-indicator"><span></span></div>
-
-  <!-- Script para toggle de tema -->
   <script>
-    const toggle = document.getElementById('toggle-checkbox');
-    toggle.addEventListener('change', () => {
-      document.body.classList.toggle('light-theme', toggle.checked);
-    });
+    // Nada por ahora
   </script>
 </body>
 </html>
